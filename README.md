@@ -5,8 +5,6 @@
 
 Aplikasi web yang memungkinkan pengguna untuk mendaftar, membuat formulir kustom yang fleksibel seperti Google Forms, membagikannya melalui link unik, dan melihat tanggapan yang masuk.
 
-![Screenshot Aplikasi Form Builder](https://clonegfrom.hikmahboiler.com/screenshot.png) 
-*Catatan: Ganti URL di atas dengan link ke screenshot nyata dari aplikasi Anda.*
 
 ---
 

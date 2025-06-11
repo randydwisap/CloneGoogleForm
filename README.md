@@ -1,62 +1,90 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# Form Builder - Klon Google Forms dengan Laravel & Filament
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+[![Made with Laravel](https://img.shields.io/badge/Made%20with-Laravel-FF2D20.svg?style=for-the-badge&logo=laravel)](https://laravel.com)
+[![Powered by Filament](https://img.shields.io/badge/Powered%20by-Filament-F59E0B.svg?style=for-the-badge)](https://filamentphp.com)
 
-## About Laravel
+Aplikasi web yang memungkinkan pengguna untuk mendaftar, membuat formulir kustom yang fleksibel seperti Google Forms, membagikannya melalui link unik, dan melihat tanggapan yang masuk.
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+![Screenshot Aplikasi Form Builder](https://clonegfrom.hikmahboiler.com/screenshot.png) 
+*Catatan: Ganti URL di atas dengan link ke screenshot nyata dari aplikasi Anda.*
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+---
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+## ✨ Fitur Utama
 
-## Learning Laravel
+- **Otentikasi Pengguna**: Sistem registrasi dan login yang aman.
+- **Multi-User**: Setiap pengguna dapat mengelola formulirnya sendiri secara terpisah.
+- **Form Builder Dinamis**: Panel admin yang dibuat dengan Filament untuk membuat dan mengedit formulir dengan mudah.
+- **Beragam Tipe Pertanyaan**: Dukungan untuk input teks, textarea, pilihan ganda (select), radio button, dan checkbox.
+- **URL Unik**: Setiap formulir memiliki URL publik yang unik (`slug`) untuk dibagikan.
+- **Manajemen Tanggapan**: Lihat semua tanggapan yang masuk untuk setiap formulir melalui panel admin.
+- **Desain Responsif**: Halaman formulir publik yang dirancang dengan baik dan dapat diakses dari berbagai perangkat.
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+---
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+## 🛠️ Teknologi yang Digunakan
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+- **Backend**: Laravel 11
+- **Admin Panel**: Filament 3
+- **Frontend**: Blade, Tailwind CSS (via CDN)
+- **Database**: MySQL
+- **Deployment**: Hostinger (Shared Hosting)
 
-## Laravel Sponsors
+---
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+## 🚀 Instalasi Lokal
 
-### Premium Partners
+Berikut adalah cara untuk menjalankan proyek ini di lingkungan lokal Anda.
 
-- **[Vehikl](https://vehikl.com)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Redberry](https://redberry.international/laravel-development)**
-- **[Active Logic](https://activelogic.com)**
+1.  **Clone repository ini:**
+    ```bash
+    git clone [https://github.com/NAMA_USER_ANDA/NAMA_REPO_ANDA.git](https://github.com/NAMA_USER_ANDA/NAMA_REPO_ANDA.git)
+    cd NAMA_REPO_ANDA
+    ```
 
-## Contributing
+2.  **Install dependencies Composer:**
+    ```bash
+    composer install
+    ```
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+3.  **Salin dan konfigurasi file environment:**
+    ```bash
+    cp .env.example .env
+    ```
+    Buka file `.env` dan sesuaikan pengaturan database (`DB_DATABASE`, `DB_USERNAME`, `DB_PASSWORD`).
 
-## Code of Conduct
+4.  **Generate application key:**
+    ```bash
+    php artisan key:generate
+    ```
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+5.  **Jalankan migrasi database:**
+    Perintah ini akan membuat semua tabel yang diperlukan di database Anda.
+    ```bash
+    php artisan migrate
+    ```
 
-## Security Vulnerabilities
+6.  **Buat user pertama Anda:**
+    Anda bisa membuat user melalui halaman registrasi (`/admin/register`) atau menggunakan `tinker`:
+    ```bash
+    php artisan tinker
+    ```
+    Lalu jalankan di dalam tinker:
+    ```php
+    \App\Models\User::create([
+        'name' => 'Admin',
+        'email' => 'admin@example.com',
+        'password' => bcrypt('password'),
+    ]);
+    ```
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+7.  **(Opsional) Buat symbolic link untuk storage:**
+    ```bash
+    php artisan storage:link
+    ```
 
-## License
-
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
-# CloneGoogleForm
+8.  **Jalankan server pengembangan:**
+    ```bash
+    php artisan serve
+    ```
+    Aplikasi Anda sekarang bisa diakses di `http://127.0.0.1:

@@ -38,7 +38,7 @@ Berikut adalah cara untuk menjalankan proyek ini di lingkungan lokal Anda.
 
 1.  **Clone repository ini:**
     ```bash
-    git clone [https://github.com/NAMA_USER_ANDA/NAMA_REPO_ANDA.git](https://github.com/NAMA_USER_ANDA/NAMA_REPO_ANDA.git)
+    git clone https://github.com/randydwisap/CloneGoogleForm
     cd NAMA_REPO_ANDA
     ```
 
